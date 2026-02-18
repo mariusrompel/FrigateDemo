@@ -41,7 +41,11 @@ function App() {
       <AuthProvider>
         <BrowserRouter basename={window.baseUrl}>
           <Wrapper>
-            <Suspense>
+            <Suspense
+              fallback={
+                <ActivityIndicator className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+              }
+            >
               <Routes>
                 <Route path="/standalone/*" element={<Standalone />} />
                 <Route
