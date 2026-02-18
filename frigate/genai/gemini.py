@@ -236,7 +236,7 @@ class GeminiClient(GenAIClient):
                 "finish_reason": finish_reason,
             }
 
-        except GoogleAPICallError as e:
+        except errors.APIError as e:
             logger.warning("Gemini returned an error: %s", str(e))
             return {
                 "content": None,
